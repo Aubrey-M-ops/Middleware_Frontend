@@ -29,9 +29,9 @@ import SoftTypography from "components/SoftTypography";
 import Table from "examples/Tables/Table";
 
 // Data
-import data from "layouts/dashboard/components/Projects/data";
+import data from "layouts/dashboard/components/NodeTable/data";
 
-function Projects() {
+function NodeTable() {
   const { columns, rows } = data();
   const [menu, setMenu] = useState(null);
 
@@ -64,7 +64,7 @@ function Projects() {
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SoftBox>
           <SoftTypography variant="h6" gutterBottom>
-            Projects
+            Nodes Info
           </SoftTypography>
           <SoftBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
@@ -104,4 +104,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default NodeTable;

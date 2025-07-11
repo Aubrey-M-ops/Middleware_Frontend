@@ -26,6 +26,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
+import DefaultCounterCard from "examples/Cards/CounterCards/OutlinedCounterCard";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import GradientLineChart from "examples/Charts/LineCharts/GradientLineChart";
 
@@ -35,7 +36,7 @@ import typography from "assets/theme/base/typography";
 // Dashboard layout components
 import BuildByDevelopers from "layouts/dashboard/components/BuildByDevelopers";
 import WorkWithTheRockets from "layouts/dashboard/components/WorkWithTheRockets";
-import Projects from "layouts/dashboard/components/Projects";
+import NodeTable from "layouts/dashboard/components/NodeTable";
 import OrderOverview from "layouts/dashboard/components/OrderOverview";
 
 // Data
@@ -50,45 +51,56 @@ function Dashboard() {
     <DashboardLayout>
       <DashboardNavbar />
       <SoftBox py={3}>
+        {/* Top line (4 cards) */}
         <SoftBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "today's money" }}
-                count="$53,000"
+                bgColor="white"
+                direction="right"
+                title={{ text: "Online Nodes" }}
+                count="10"
                 percentage={{ color: "success", text: "+55%" }}
-                icon={{ color: "info", component: "paid" }}
+                icon={{ color: "info", component: "cloud" }}
               />
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "today's users" }}
-                count="2,300"
+                bgColor="white"
+                direction="right"
+                title={{ text: "Average CPU Usage" }}
+                count="75.65%"
                 percentage={{ color: "success", text: "+3%" }}
-                icon={{ color: "info", component: "public" }}
+                icon={{ color: "info", component: "local_gas_station" }}
               />
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "new clients" }}
-                count="+3,462"
-                percentage={{ color: "error", text: "-2%" }}
-                icon={{ color: "info", component: "emoji_events" }}
+                bgColor="white"
+                direction="right"
+                title={{ text: "Service Deployed" }}
+                count="127"
+                percentage={{ color: "error", text: "-32" }}
+                icon={{ color: "info", component: "devices" }}
               />
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
-              <MiniStatisticsCard
-                title={{ text: "sales" }}
-                count="$103,430"
-                percentage={{ color: "success", text: "+5%" }}
-                icon={{
-                  color: "info",
-                  component: "shopping_cart",
-                }}
+              <DefaultCounterCard
+                count={417}
+                suffix="Mbit/s"
+                title="Total Net Tx"
               />
             </Grid>
           </Grid>
         </SoftBox>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6} lg={12}>
+            <NodeTable />
+          </Grid>
+          {/* <Grid item xs={12} md={6} lg={2}>
+            <OrderOverview />
+          </Grid> */}
+        </Grid>
         <SoftBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={7}>
@@ -135,14 +147,7 @@ function Dashboard() {
             </Grid>
           </Grid>
         </SoftBox>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={8}>
-            <Projects />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <OrderOverview />
-          </Grid>
-        </Grid>
+        
       </SoftBox>
       <Footer />
     </DashboardLayout>

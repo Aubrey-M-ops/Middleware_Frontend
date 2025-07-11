@@ -60,6 +60,7 @@ const authorsTableData = {
       employed: (
         <SoftTypography variant="caption" color="secondary" fontWeight="medium">
           23/04/18
+          
         </SoftTypography>
       ),
       action: (
