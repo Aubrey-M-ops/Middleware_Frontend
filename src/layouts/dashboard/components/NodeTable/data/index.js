@@ -84,7 +84,14 @@ export default function data() {
       ),
       Role: (
         <div
-          style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.2rem" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.2rem",
+            height: "40px",
+            lineHeight: "40px",
+          }}
         >
           <Icon color={role === "CLOUD" ? "info" : "warning"} fontSize="medium">
             {role === "CLOUD" ? "cloud" : "devices_other"}
@@ -94,7 +101,7 @@ export default function data() {
             color={role === "CLOUD" ? "info" : "warning"}
             fontWeight="medium"
             textAlign="center"
-            fontSize="0.8rem"
+            // fontSize="0.8rem"
           >
             {role}
           </SoftTypography>

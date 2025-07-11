@@ -63,10 +63,10 @@ function NodeTable() {
     <Card>
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SoftBox>
-          <SoftTypography variant="h6" gutterBottom>
+          <SoftTypography variant="h5" gutterBottom>
             Nodes Info
           </SoftTypography>
-          <SoftBox display="flex" alignItems="center" lineHeight={0}>
+          {/* <SoftBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
               sx={{
                 fontWeight: "bold",
@@ -79,7 +79,7 @@ function NodeTable() {
             <SoftTypography variant="button" fontWeight="regular" color="text">
               &nbsp;<strong>30 done</strong> this month
             </SoftTypography>
-          </SoftBox>
+          </SoftBox> */}
         </SoftBox>
         <SoftBox color="text" px={2}>
           <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" onClick={openMenu}>
@@ -89,6 +89,7 @@ function NodeTable() {
         {renderMenu}
       </SoftBox>
       <SoftBox
+        style={{ padding: "10px"}}
         sx={{
           "& .MuiTableRow-root:not(:last-child)": {
             "& td": {

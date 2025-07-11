@@ -24,26 +24,28 @@ import SoftTypography from "components/SoftTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import Table from "examples/Tables/Table";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
+import authorsTableData from "layouts/serviceInfo/data/authorsTableData";
+import projectsTableData from "layouts/serviceInfo/data/projectsTableData";
+
+import NodesGrid from "layouts/serviceInfo/components/NodesGrid";
 
 function Tables() {
-  const { columns, rows } = authorsTableData;
-  const { columns: prCols, rows: prRows } = projectsTableData;
+  // const { columns, rows } = authorsTableData;
+  // const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      {/* <DashboardNavbar /> */}
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-              <SoftTypography variant="h6">Authors table</SoftTypography>
+              <SoftTypography variant="h4">Service Deployment</SoftTypography>
             </SoftBox>
-            <SoftBox
+            <NodesGrid />
+            {/* <SoftBox
               sx={{
                 "& .MuiTableRow-root:not(:last-child)": {
                   "& td": {
@@ -54,10 +56,10 @@ function Tables() {
               }}
             >
               <Table columns={columns} rows={rows} />
-            </SoftBox>
+            </SoftBox> */}
           </Card>
         </SoftBox>
-        <Card>
+        {/* <Card>
           <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
             <SoftTypography variant="h6">Projects table</SoftTypography>
           </SoftBox>
@@ -73,7 +75,7 @@ function Tables() {
           >
             <Table columns={prCols} rows={prRows} />
           </SoftBox>
-        </Card>
+        </Card> */}
       </SoftBox>
       <Footer />
     </DashboardLayout>

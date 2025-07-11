@@ -29,6 +29,7 @@ import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCar
 import DefaultCounterCard from "examples/Cards/CounterCards/OutlinedCounterCard";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import GradientLineChart from "examples/Charts/LineCharts/GradientLineChart";
+import MixedChart from "examples/Charts/MixedChart";
 
 // Soft UI Dashboard React base styles
 import typography from "assets/theme/base/typography";
@@ -49,8 +50,16 @@ function Dashboard() {
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      {/* <DashboardNavbar /> */}
       <SoftBox py={3}>
+        <SoftBox mb={3}>
+          <SoftTypography variant="h2" color="info" textGradient>
+            <Icon style={{ lineHeight: "48px", marginRight: "10px" }}>monitor_heart</Icon>
+          </SoftTypography>
+          <SoftTypography variant="h3" color="info" textGradient>
+            ConstellaNet
+          </SoftTypography>
+        </SoftBox>
         {/* Top line (4 cards) */}
         <SoftBox mb={3}>
           <Grid container spacing={3}>
@@ -85,36 +94,26 @@ function Dashboard() {
               />
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
-              <DefaultCounterCard
-                count={417}
-                suffix="Mbit/s"
-                title="Total Net Tx"
-              />
+              <DefaultCounterCard count={417} suffix="Mbit/s" title="Total Net Tx" />
             </Grid>
           </Grid>
         </SoftBox>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={12}>
-            <NodeTable />
-          </Grid>
-          {/* <Grid item xs={12} md={6} lg={2}>
+        <SoftBox mb={3}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6} lg={12}>
+              <NodeTable />
+            </Grid>
+            {/* <Grid item xs={12} md={6} lg={2}>
             <OrderOverview />
           </Grid> */}
-        </Grid>
-        <SoftBox mb={3}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} lg={7}>
-              <BuildByDevelopers />
-            </Grid>
-            <Grid item xs={12} lg={5}>
-              <WorkWithTheRockets />
-            </Grid>
           </Grid>
         </SoftBox>
+
         <SoftBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
-              <ReportsBarChart
+              {/* TODO: Doughnut chart */}
+              {/* <ReportsBarChart
                 title="active users"
                 description={
                   <>
@@ -123,10 +122,10 @@ function Dashboard() {
                 }
                 chart={chart}
                 items={items}
-              />
+              /> */}
             </Grid>
             <Grid item xs={12} lg={7}>
-              <GradientLineChart
+              {/* <GradientLineChart
                 title="Sales Overview"
                 description={
                   <SoftBox display="flex" alignItems="center">
@@ -143,11 +142,41 @@ function Dashboard() {
                 }
                 height="20.25rem"
                 chart={gradientLineChartData}
+              /> */}
+              <MixedChart
+                title="Network Traffic"
+                // height="20.25rem"
+                chart={{
+                  labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  datasets: [
+                    {
+                      chartType: "thin-bar",
+                      label: "Organic Search",
+                      color: "dark",
+                      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    },
+                    {
+                      chartType: "gradient-line",
+                      label: "Referral",
+                      color: "info",
+                      data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                    },
+                  ],
+                }}
               />
             </Grid>
           </Grid>
         </SoftBox>
-        
+        <SoftBox mb={3}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} lg={7}>
+              <BuildByDevelopers />
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <WorkWithTheRockets />
+            </Grid>
+          </Grid>
+        </SoftBox>
       </SoftBox>
       <Footer />
     </DashboardLayout>
