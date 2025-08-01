@@ -64,7 +64,7 @@ function NodeTable() {
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SoftBox>
           <SoftTypography variant="h5" gutterBottom>
-            Nodes Info
+            Resource Discovery
           </SoftTypography>
           {/* <SoftBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
