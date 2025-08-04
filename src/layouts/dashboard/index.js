@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Soft UI Dashboard React - v4.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
@@ -30,6 +15,8 @@ import DefaultCounterCard from "examples/Cards/CounterCards/OutlinedCounterCard"
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import GradientLineChart from "examples/Charts/LineCharts/GradientLineChart";
 import MixedChart from "examples/Charts/MixedChart";
+import RTTHeatMap from "layouts/dashboard/components/RTTGrid";
+import Card from "@mui/material/Card";
 
 // Soft UI Dashboard React base styles
 import typography from "assets/theme/base/typography";
@@ -108,6 +95,14 @@ function Dashboard() {
           </Grid> */}
           </Grid>
         </SoftBox>
+        <SoftBox>
+          <Card>
+            <SoftTypography variant="h5" gutter padding={2}>
+              Agent-Agent RTT Heatmap
+            </SoftTypography>
+            <RTTHeatMap />
+          </Card>
+        </SoftBox>
 
         <SoftBox mb={3}>
           <Grid container spacing={3}>
@@ -143,7 +138,7 @@ function Dashboard() {
                 height="20.25rem"
                 chart={gradientLineChartData}
               /> */}
-              <MixedChart
+              {/* <MixedChart
                 title="Network Traffic"
                 // height="20.25rem"
                 chart={{
@@ -163,11 +158,11 @@ function Dashboard() {
                     },
                   ],
                 }}
-              />
+              /> */}
             </Grid>
           </Grid>
         </SoftBox>
-        <SoftBox mb={3}>
+        {/* <SoftBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={7}>
               <BuildByDevelopers />
@@ -176,9 +171,9 @@ function Dashboard() {
               <WorkWithTheRockets />
             </Grid>
           </Grid>
-        </SoftBox>
+        </SoftBox> */}
       </SoftBox>
-      <Footer />
+      {/* <Footer /> */}
     </DashboardLayout>
   );
 }
